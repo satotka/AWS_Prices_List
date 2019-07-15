@@ -5,10 +5,7 @@ import {Page} from './page';
 
 @Component({
   selector: 'app',
-  template: require('./app.html'),
-  styles: [
-    require('./app.css')
-  ]
+  template: '<ons-navigator [page]="page"></ons-navigator>'
 })
 export class MyApp {
   page = Page;

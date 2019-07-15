@@ -3,10 +3,7 @@ import {OnsNavigator} from 'ngx-onsenui';
 
 @Component({
   selector: 'ons-page[page]',
-  template: require('./page.html'),
-  styles: [
-    require('./page.css')
-  ]
+  template: require('./page.html')
 })
 export class Page {
   constructor(private navi : OnsNavigator) {
