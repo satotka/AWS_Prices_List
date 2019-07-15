@@ -1,7 +1,7 @@
-import {Component, ViewChild} from '@angular/core';
-import {OnsSplitterContent, OnsSplitterSide} from 'ngx-onsenui';
+import { Component, ViewChild } from '@angular/core';
+import { OnsSplitterContent, OnsSplitterSide } from 'ngx-onsenui';
 
-import {Page} from './page';
+import { Page } from './page';
 
 @Component({
   selector: 'app',

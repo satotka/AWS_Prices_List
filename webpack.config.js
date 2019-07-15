@@ -83,7 +83,7 @@ let webpackConfig = {
       },
       {
         test: /\.css$/,
-        use: [          
+        use: [
           'to-string-loader',
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
@@ -116,20 +116,20 @@ let webpackConfig = {
         'PROD': !devMode,
       }
     }),
-    new webpack.ContextReplacementPlugin( /angular(\\|\/)core(\\|\/)/, path.resolve(__dirname, './src') )
+    new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)/, path.resolve(__dirname, './src'))
   ],
 
   resolveLoader: {
-    modules: [ 'node_modules' ]
+    modules: ['node_modules']
   },
- 
+
   performance: {
     hints: false
   }
 }
 
 // Development mode
-if(devMode) {
+if (devMode) {
 
   webpackConfig.devtool = 'eval';
 
@@ -159,11 +159,11 @@ if(devMode) {
       chunksSortMode: 'dependency'
     })
   ];
-  
-  webpackConfig.plugins = webpackConfig.plugins.concat( devPlugins　);
+
+  webpackConfig.plugins = webpackConfig.plugins.concat(devPlugins);
 
 } else {
-  
+
   // Production mode
   let prodPlugins = [
     new HtmlWebPackPlugin({
@@ -180,7 +180,7 @@ if(devMode) {
       }
     })
   ];
-  webpackConfig.plugins = webpackConfig.plugins.concat( prodPlugins );
+  webpackConfig.plugins = webpackConfig.plugins.concat(prodPlugins);
 
 }
 
