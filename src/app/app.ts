@@ -1,12 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
-import { OnsSplitterContent, OnsSplitterSide } from 'ngx-onsenui';
-
-import { Page } from './page';
+import { Component } from '@angular/core';
+import { MainPage } from './main.page';
 
 @Component({
   selector: 'app',
   template: '<ons-navigator [page]="page"></ons-navigator>'
 })
 export class MyApp {
-  page = Page;
+  page = MainPage;
 }
