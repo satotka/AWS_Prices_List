@@ -1,0 +1,17 @@
+<ons-list-title>Offer Index</ons-list-title>
+<ons-list>
+  <ons-list-header>Format Version</ons-list-header>
+  <ons-list-item>{{offerIndex.formatVersion}}</ons-list-item>
+  <ons-list-header>Disclaimer</ons-list-header>
+  <ons-list-item>{{offerIndex.disclaimer}}</ons-list-item>
+</ons-list>
+
+<ons-list-title>Services</ons-list-title>
+<ons-list>
+  <ng-container *ngFor="let item of offerIndex.offers | keyvalue">
+    <ons-list-header>{{item.key}}</ons-list-header>
+    <ons-list-item *ngFor="let att of item.value | keyvalue">
+      {{att.key}} : <ons-input type="text" placeholder="NoData" [(value)]="att.value"></ons-input>
+    </ons-list-item>
+  </ng-container>
+</ons-list>
