@@ -1,9 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-offers',
-    template: '<h1>Offers</h1>'
+  selector: 'app-offers',
+  template: `
+    <ons-list>
+   <ons-list-header>Format Version</ons-list-header>
+    <ons-list-item>{{offerIndex.formatVersion}}</ons-list-item>
+    <ons-list-header>Disclaimer</ons-list-header>
+    <ons-list-item>{{offerIndex.disclaimer}}</ons-list-item>
+    <span *ngFor="let item of offerIndex.offers | keyvalue">
+      <ons-list-header>{{item.key}}</ons-list-header>
+      <div *ngFor="let att of item.value | keyvalue">
+      {{att.key}} : {{att.value}}
+      </div>
+    </span>
+    </ons-list>
+    `
 })
 export class OffersComponent {
-    constructor() { }
+  @Input() offerIndex;
+
+  constructor() { }
 }

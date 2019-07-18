@@ -7,8 +7,7 @@ import { PriceService } from '../services/price.service';
   template: require('./main.page.html')
 })
 export class MainPage implements OnInit {
-  index;
-  offers = [];
+  offerIndex;
 
   constructor(
     private navi: OnsNavigator,
@@ -21,12 +20,8 @@ export class MainPage implements OnInit {
 
   getOfferIndex(): void {
     this.ps.getOfferIndex()
-      .subscribe((dt) => {
-        this.index = dt;
+      .subscribe((offerIndex) => {
+        this.offerIndex = offerIndex;
       });
-  }
-
-  push() {
-    this.navi.element.pushPage(MainPage);
   }
 }
