@@ -34,8 +34,10 @@ RUN apt-get update \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-# Install angular and monaca globally
-RUN npm install -g @angular/cli@^7.0.0 monaca
+# NPM Install globally
+RUN npm install -g \
+    @angular/cli@^7.0.0 \
+    monaca
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=dialog
